@@ -32,5 +32,6 @@ INSERT INTO `world_cup`.`team` (`name`, `continent`, `rank`, `flag`, `points`, `
 INSERT INTO `world_cup`.`team` (`name`, `continent`, `rank`, `flag`, `points`, `group_id`) VALUES ('Senegal', 'Africa', '28', 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg', '0', '8');
 INSERT INTO `world_cup`.`team` (`name`, `continent`, `rank`, `flag`, `points`, `group_id`) VALUES ('Colombia', 'South America', '16', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/450px-Flag_of_Colombia.png', '0', '8');
 INSERT INTO `world_cup`.`team` (`name`, `continent`, `rank`, `flag`, `points`, `group_id`) VALUES ('Japan', 'Asia', '60', 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/900px-Flag_of_Japan.png', '0', '8');
+INSERT INTO `world_cup`.`team` (`name`, `continent`, `rank`, `flag`, `points`, `group_id`) VALUES ('null', 'null', '0', 'null', '0', '9');
 
 SET SQL_SAFE_UPDATES = 1;

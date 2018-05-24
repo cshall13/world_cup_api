@@ -8,5 +8,6 @@ INSERT INTO `world_cup`.`group` (`name`) VALUES (`Group E`);
 INSERT INTO `world_cup`.`group` (`name`) VALUES (`Group F`);
 INSERT INTO `world_cup`.`group` (`name`) VALUES (`Group G`);
 INSERT INTO `world_cup`.`group` (`name`) VALUES (`Group H`);
+INSERT INTO `world_cup`.`group` (`name`) VALUES (`null`);
 
 SET SQL_SAFE_UPDATES = 1;
