@@ -410,8 +410,8 @@ INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `posit
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Ivan', 'Perisic', 'Inter Milan ', 'MF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Ivan', 'Rakitic', 'Barcelona', 'MF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Marko', 'Rog', 'Napoli', 'MF', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Mario', 'Situm', 'Lech Poznań', 'MF', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Duje', 'Cop', 'Standard Liège', 'FW', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Mario', 'Situm', 'Lech Poznan', 'MF', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Duje', 'Cop', 'Standard Liege', 'FW', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Andrej', 'Kramaric', '1899 Hoffenheim', 'FW', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Mario', 'Manduzkic', 'Juventus', 'FW', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('15', 'Marko', 'Pjaca', 'FC Schalke 04', 'FW', '-1');
@@ -598,7 +598,7 @@ INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `posit
 
 -- Mexico
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Corona', 'José', 'Cruz Azul', 'GK', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Ochoa', 'Guillermo', 'Standard Liège', 'GK', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Ochoa', 'Guillermo', 'Standard Liege', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Talavera', 'Alfredo', 'Toluca', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Alanís', 'Oswaldo', 'Guadalajara', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('22', 'Araujo', 'Néstor', 'Santos', 'DF', '-1');
@@ -682,12 +682,12 @@ INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `posit
 -- Belgium
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Casteels', 'Koen', 'VfL Wolfsburg', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', ' Courtois', 'Thibaut', 'Chelsea', 'GK', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Jean-Francois', 'Gillet', 'Standard Liège', 'GK', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Jean-Francois', 'Gillet', 'Standard Liege', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Mignolet', 'Simon', 'Liverpool', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Sels', 'Matz', 'Newcastle United', 'GK', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Alderweireld', 'Toby', 'Tottenham Hotspur', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Boyata', 'Dedryck', 'Celtic', 'DF', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Cavanda', 'Luis', 'Standard Liège', 'DF', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Cavanda', 'Luis', 'Standard Liege', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Ciman', 'Laurent', 'LAFC', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Denayer', 'Jason', 'Galatasaray', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Kabasele', 'Christian', 'Watford', 'DF', '-1');
@@ -695,7 +695,7 @@ INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `posit
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Lombaerts', 'Nicolas', 'KV Oostende', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Lukaku', 'Jordan', 'Lazio', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Meunier', 'Thomas', 'Paris Saint-Germain', 'DF', '-1');
-INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Pocognoli', 'Sébastien', 'Standard Liège', 'DF', '-1');
+INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Pocognoli', 'Sébastien', 'Standard Liege', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Vermaelen', 'Thomas', 'Barcelona', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Vertonghen', 'Jan', 'Tottenham Hotspur', 'DF', '-1');
 INSERT INTO `world_cup`.`players` (`team_id`, `l_name`, `f_name`, `club`, `position`, `number`) VALUES ('25', 'Carrasco', 'Yannick', 'Dalian Yifang', 'MF', '-1');
