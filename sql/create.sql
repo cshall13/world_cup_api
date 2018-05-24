@@ -23,7 +23,7 @@ CREATE TABLE `world_cup`.`team` (
   `points` INT NULL,
   `group_id` INT NULL,
   PRIMARY KEY(`id`),
-  INDEX `FK_TEAM_GROUP_idx` (`group_id` ASC) VISIBLE,
+--   INDEX `FK_TEAM_GROUP_idx` (`group_id` ASC) VISIBLE,
   CONSTRAINT `FK_TEAM_GROUP`
     FOREIGN KEY (`group_id`)
     REFERENCES `world_cup`.`group` (`id`)
@@ -40,7 +40,7 @@ CREATE TABLE `world_cup`.`players` (
   `number` INT NULL,
   `team_id` INT NULL,
   PRIMARY KEY(`id`),
-  INDEX `FK_PLAYER_TEAM_idx` (`team_id` ASC) VISIBLE,
+--   INDEX `FK_PLAYER_TEAM_idx` (`team_id` ASC) VISIBLE,
   CONSTRAINT `FK_PLAYER_TEAM`
     FOREIGN KEY (`team_id`)
     REFERENCES `world_cup`.`team` (`id`)
@@ -54,7 +54,7 @@ CREATE TABLE `world_cup`.`manager` (
   `f_name` VARCHAR(45) NULL,
   `team_id` INT NULL,
   PRIMARY KEY(`id`),
-  INDEX `FK_MANAGER_TEAM_idx` (`team_id` ASC) VISIBLE,
+--   INDEX `FK_MANAGER_TEAM_idx` (`team_id` ASC) VISIBLE,
   CONSTRAINT `FK_MANAGER_TEAM`
     FOREIGN KEY (`team_id`)
     REFERENCES `world_cup`.`team` (`id`)
@@ -75,9 +75,9 @@ CREATE TABLE `world_cup`.`schedule` (
   `home_score` INT NULL,
   `away_score` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `home_id_idx` (`home_id` ASC) VISIBLE,
-  INDEX `FK_AWAY_SCHE_idx` (`away_id` ASC) VISIBLE,
-  INDEX `FK_STAD_SCHE_idx` (`stadium_id` ASC) VISIBLE,
+--   INDEX `home_id_idx` (`home_id` ASC) VISIBLE,
+--   INDEX `FK_AWAY_SCHE_idx` (`away_id` ASC) VISIBLE,
+--   INDEX `FK_STAD_SCHE_idx` (`stadium_id` ASC) VISIBLE,
   CONSTRAINT `FK_HOME_SCHE`
     FOREIGN KEY (`home_id`)
     REFERENCES `world_cup`.`team` (`id`)
