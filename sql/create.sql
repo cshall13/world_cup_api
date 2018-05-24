@@ -66,8 +66,11 @@ CREATE TABLE `world_cup`.`manager` (
 
 CREATE TABLE `world_cup`.`schedule` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `date` DATETIME NULL,
-  `name` VARCHAR(45) NULL,
+  `type` VARCHAR(45) NULL,
+  `round` INT NULL,
+  `date` INT NULL,
+  `month` INT NULL,
+  `localTime` VARCHAR(45), 
   `home_id` INT NULL,
   `away_id` INT NULL,
   `stadium_id` INT NULL,
