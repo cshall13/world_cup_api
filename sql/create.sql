@@ -1,5 +1,3 @@
-CREATE SCHEMA `world_cup`;
-
 SET SQL_SAFE_UPDATES = 0;
 
 CREATE TABLE `world_cup`.`group` (
