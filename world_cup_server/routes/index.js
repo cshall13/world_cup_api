@@ -4,6 +4,8 @@ var router = express.Router();
 const mysql = require('mysql');
 const creds = require('../config/creds');
 const connection = mysql.createConnection(creds);
+const bcrypt = require('bcrypt-nodejs');
+const randToken = require('rand-token');
 
 connection.connect((error)=>{
 	if(error) {
@@ -55,6 +57,72 @@ router.get('/teams', (req, res)=>{
 	  		msg: "requestSuccess"
 	  	});
   });
+})
+
+router.post('/register', (req, res)=>{
+	const password = req.body.password;
+	const hashedPassword = bcrypt.hashSync(password);
+	const email = req.body.email;
+	console.log(email, password);
+
+	const insertUserQuery = `INSERT into user
+		(email, password, token)
+			VALUES
+		(?, ?, ?)`;
+	const token = randToken.uid(60);
+	connection.query(insertUserQuery, [email, hashedPassword,token],(error, results)=>{
+		if(error){throw error;}
+		res.json({
+			token,
+			msg: "registerSuccess"
+		})
+	});
+});
+
+router.post('/login', (req, res)=>{
+	const email = req.body.email;
+	const password = req.body.password;
+
+	const selectQuery = `SELECT * FROM user
+	WHERE email= ?`;
+
+
+	getUserValid = new Promise((accept, reject)=>{
+		connection.query(selectQuery,[email], (error, results)=>{
+			if(error){throw error;}
+
+			// console.log(results[0].password)
+			const validLogin = bcrypt.compareSync(password, results[0].password)
+			// console.log(validLogin);
+			if(validLogin){
+				accept(results[0])
+			}else{
+				reject()
+			}
+		})		
+	})
+
+	getUserValid.then((user)=>{
+		const token = randToken.uid(60);
+		const updateToken = `UPDATE user
+		SET token=?	
+		WHERE id= ?`;
+
+		connection.query(updateToken, [token, user.id], (error, results)=>{
+			if(error){throw error;}
+			// console.log(results);
+			res.json({
+				token,
+				user,
+				msg: "loginSuccess"
+			})
+		})
+	})
+
+	getUserValid.catch(()=>{
+		console.log("Login Failed")
+	})
+
 })
 
 module.exports = router;
