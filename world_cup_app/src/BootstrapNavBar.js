@@ -97,6 +97,8 @@ class BootstrapNavBar extends Component {
 			<div className="container">
 				<h1><Link to="/register"> Register </Link></h1>
 				<h1><Link to="/login"> Login </Link></h1>
+			
+				<h2> HomePage </h2>
 			</div>
 >>>>>>> login works, no handling on incorrect login info
 		)
