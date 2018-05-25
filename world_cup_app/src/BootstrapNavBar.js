@@ -74,10 +74,10 @@ class BootstrapNavBar extends Component {
 					</NavItem>
 				</Nav>
 				<Nav pullRight>
-					<NavItem href="#">
+					<NavItem href="/register">
 						<Glyphicon glyph="user" /> Register
 					</NavItem>
-					<NavItem href="#">
+					<NavItem href="/login">
 						<Glyphicon glyph="log-in" /> Login
 					</NavItem>
 					<NavItem>

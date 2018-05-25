@@ -27,7 +27,7 @@ class HomePage extends Component {
 		bootstrapUtils.addStyle(Image, 'custom');
 		return (
 			<div>
-			    <style type="text/css">{`
+			    <style type="text/css" >{`
 				    .custom-rounded {
 				        width: 5%;
 				        height: 5%;
