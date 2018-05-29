@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Collapse, Form, FormControl, FormGroup, Glyphicon, InputGroup, Nav, Navbar, NavItem } from 'react-bootstrap';
 import { bootstrapUtils } from 'react-bootstrap/lib/utils';
+import Logout from './logout'
 
 class BootstrapNavBar extends Component {
 	constructor() {
@@ -58,6 +59,7 @@ class BootstrapNavBar extends Component {
 	render() {
 		const customButtonStyle = this.buttonStyle();
 		const customFormStyle = this.formStyle();
+		const loggedIn= localStorage.token;
 		return (
 			<Navbar inverse collapseOnSelect>
 				<Navbar.Header>
@@ -73,6 +75,11 @@ class BootstrapNavBar extends Component {
 						Schedule
 					</NavItem>
 				</Nav>
+				
+
+				{loggedIn === undefined
+				?
+				<div>
 				<Nav pullRight>
 					<NavItem href="/register">
 						<Glyphicon glyph="user" /> Register
@@ -81,8 +88,27 @@ class BootstrapNavBar extends Component {
 						<Glyphicon glyph="log-in" /> Login
 					</NavItem>
 					<NavItem>
-						{customButtonStyle}
+					{customButtonStyle}
+				</NavItem>
+					</Nav>
+				<Collapse in={this.state.collapsed}>
+					<Form>
+					    <FormGroup>
+						    {customFormStyle}
+					    </FormGroup>{' '}
+					</Form>
+				</Collapse>
+				</div>	
+				:
+				<div>
+				<Nav pullRight>
+					<NavItem href="#">
+						<Glyphicon glyph="thumbs-up" /> Favorites
 					</NavItem>
+					<Logout />
+					<NavItem>
+					{customButtonStyle}
+				</NavItem>
 				</Nav>
 				<Collapse in={this.state.collapsed}>
 					<Form>
@@ -90,7 +116,9 @@ class BootstrapNavBar extends Component {
 						    {customFormStyle}
 					    </FormGroup>{' '}
 					</Form>
-				</Collapse>				
+				</Collapse>	
+				</div>
+				}			
 			</Navbar>
 		)
 	}
