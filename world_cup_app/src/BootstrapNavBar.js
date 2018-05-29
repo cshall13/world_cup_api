@@ -68,10 +68,10 @@ class BootstrapNavBar extends Component {
 					</Navbar.Brand>
 				</Navbar.Header>
 				<Nav>
-					<NavItem href="#">
+					<NavItem href="/groups">
 						Groups
 					</NavItem>
-					<NavItem href="#">
+					<NavItem href="/schedule">
 						Schedule
 					</NavItem>
 				</Nav>
