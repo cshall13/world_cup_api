@@ -37,7 +37,7 @@ router.get('/home', (req, res)=>{
 })
 
 router.get('/schedule', (req, res)=> {
-	const selectQuery = `SELECT schedule.type, schedule.month, schedule.date, schedule.localTime, team1.name AS home, team1.flag AS home_flag, team2.name AS away, team2.flag AS away_flag, stadium.city, stadium.name, stadium.image
+	const selectQuery = `SELECT schedule.type, schedule.month, schedule.date, schedule.localTime, team1.name AS home, team1.logo AS home_logo, team2.name AS away, team2.logo AS away_logo, stadium.city, stadium.name, stadium.image
 							FROM schedule, team AS team1, team AS team2, stadium
 							WHERE schedule.home_id = team1.id
 							AND schedule.away_id = team2.id
