@@ -45,3 +45,52 @@
 .custom-column {
 	padding-left: 0px;
 }
+
+.custom-bg{
+    height: -webkit-fill-available;
+    background-repeat: round;
+    background-image: url(https://st2.depositphotos.com/7442846/11231/v/950/depositphotos_112313008-stockillustratie-voetbalveld-met-lijnen-vector-illustratie.jpg);
+    /* background-size: contain; */
+    /*max-height: max-content;*/
+}
+
+#col-gk{
+	margin-top: 0px ;
+}
+
+#col-df{
+	margin-top: 3% ;
+}
+
+#col-mf{
+	margin-top: 5% ;
+}
+
+#col-fw{
+	margin-top: 7%;
+}
+
+
+.player-names{
+	color: white;
+	margin-right:10px;
+	margin-left: 10px;
+}
+
+.player-names:hover{
+	color: black;
+	text-decoration: underline;
+}
+
+.team-flag{
+	max-width: -webkit-fill-available;
+}
+
+.position{
+	color: white;
+	text-decoration: underline;
+}
+
+.team-link{
+	color:black;
+}

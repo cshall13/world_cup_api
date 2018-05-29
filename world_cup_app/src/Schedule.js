@@ -85,6 +85,7 @@ class Schedule extends Component {
 						</Col>
 						<Col xs={6} md={3}>
 							<h3 className="s-info">{this.imageStyle(data.home_logo)}   {data.home}</h3>
+							<h3 className="s-info">{this.imageStyle(data.home_logo)}   {data.home} </h3>
 						</Col>
 						<Col xs={6} md={1}>
 							<h3 className="s-info">{data.localTime}</h3>
