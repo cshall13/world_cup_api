@@ -204,4 +204,34 @@ router.post('/team', (req, res)=>{
 	//WHERE team.id=players.team_id AND
 	//team.id = ?`;
 })
+
+router.post('/addFav', (req, res)=>{
+	const teamToAdd = req.body.teamId;
+	const userToken = req.body.token;
+
+	const getUser = `SELECT id FROM user WHERE token = ?`
+	connection.query(getUser,[userToken],(error, results)=>{
+		if(error){throw error;}
+		if(results.length > 0){
+			// these are the droids we're looking for
+			// this is a valid token!! Hooray!
+			const insertQuery = `INSERT INTO fav_teams
+			(user_id, team_id)
+				VALUES
+			(?,?)`;
+			connection.query(insertQuery,[results[0].id,teamToAdd],(error2, results2)=>{
+				res.json({
+					msg:"favAdded"
+				})
+			})
+		}else{
+			// You dont want to sell me death sticks
+			// you want to go home and rethink your life
+			// In other words. Your token is bogus. Goodbye
+			res.json({
+				msg: "badToken"
+			})
+		}
+	})
+})
 module.exports = router;
