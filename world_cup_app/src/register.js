@@ -41,6 +41,7 @@ class Register extends Component{
     // JSX DEMANDS all self-closing tags, be closed with a /
     return(
     <div className="container">
+    <h1>Register</h1>
       <form onSubmit={this.handleRegister}>
         <div className="form-group">
           <label htmlFor="email">Email address:</label>

@@ -41,7 +41,7 @@ class HomePage extends Component {
 	render() {
 		const groupTable = this.state.group.map((data, index)=>{
 			const character = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-			console.log(index);
+			// console.log(index);
 			return(
 				<Col sm={6} md={3}>
 					<Table striped bordered condensed hover>
