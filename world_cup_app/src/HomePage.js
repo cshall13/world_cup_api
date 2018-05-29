@@ -15,7 +15,7 @@ class HomePage extends Component {
 	componentDidMount() {
 		console.log("The component has mounted!");
 		const url = 'http://localhost:4000/home';
-		const request = axios.get(url)
+		const request = axios.get(url);
 		request.then(receivedData=>{
 			this.setState({
 				group: receivedData.data.groups

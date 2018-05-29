@@ -3,8 +3,10 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 import BootstrapNavBar from './BootstrapNavBar';
 import HomePage from './HomePage';
-import Register from './register'
-import Login from './login'
+import Register from './register';
+import Login from './login';
+import GroupPage from './GroupPage';
+import Schedule from './Schedule';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route path="/groups" component={GroupPage} />
+          <Route path="/schedule" component={Schedule} />
         </div>
       </Router>
     );
