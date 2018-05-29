@@ -84,13 +84,13 @@ class Schedule extends Component {
 							</ul>
 						</Col>
 						<Col xs={6} md={3}>
-							<h3 className="s-info">{data.home}   {this.imageStyle(data.home_flag)}</h3>
+							<h3 className="s-info">{this.imageStyle(data.home_logo)}   {data.home} </h3>
 						</Col>
 						<Col xs={6} md={1}>
 							<h3 className="s-info">{data.localTime}</h3>
 						</Col>
 						<Col xs={6} md={3}>
-							<h3 className="s-info">{this.imageStyle(data.away_flag)}   {data.away}</h3>
+							<h3 className="s-info">{this.imageStyle(data.away_logo)}   {data.away}</h3>
 						</Col>
 					</Row>
 				} { data.home === 'null' && data.away === 'null' &&

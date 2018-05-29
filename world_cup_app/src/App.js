@@ -7,6 +7,7 @@ import Register from './register';
 import Login from './login';
 import GroupPage from './GroupPage';
 import Schedule from './Schedule';
+import Team from './team';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route path="/groups" component={GroupPage} />
           <Route path="/schedule" component={Schedule} />
+          <Route exact path="/team/:teamId" component={Team} />
         </div>
       </Router>
     );

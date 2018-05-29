@@ -3,7 +3,7 @@ var router = express.Router();
 
 const mysql = require('mysql');
 const creds = require('../config/creds');
-const connection = mysql.createConnection(creds);
+const connection = mysql.createConnection(creds, {multipleStatements: true});
 const bcrypt = require('bcrypt-nodejs');
 const randToken = require('rand-token');
 
@@ -37,7 +37,7 @@ router.get('/home', (req, res)=>{
 })
 
 router.get('/schedule', (req, res)=> {
-	const selectQuery = `SELECT schedule.type, schedule.month, schedule.date, schedule.localTime, team1.name AS home, team1.flag AS home_flag, team2.name AS away, team2.flag AS away_flag, stadium.city, stadium.name, stadium.image
+	const selectQuery = `SELECT schedule.type, schedule.month, schedule.date, schedule.localTime, team1.name AS home, team1.logo AS home_logo, team2.name AS away, team2.logo AS away_logo, stadium.city, stadium.name, stadium.image
 							FROM schedule, team AS team1, team AS team2, stadium
 							WHERE schedule.home_id = team1.id
 							AND schedule.away_id = team2.id
@@ -117,7 +117,50 @@ router.post('/login', (req, res)=>{
 	getUserValid.catch(()=>{
 		console.log("Login Failed")
 	})
-
 })
 
+router.post('/team', (req, res)=>{
+	// console.log(req.body.tid);
+	const tid = req.body.tid;
+	const teamQuery= `SELECT * FROM team 
+		WHERE team.id = ?`
+
+	getValidTeam = new Promise((accept, reject)=>{
+
+		connection.query(teamQuery, [tid], (error, results)=>{
+			if(error){throw error;}
+			// console.log(results[0])
+			const validTeam =(results[0].id == tid)
+			// console.log(validTeam);
+			if(validTeam){
+				accept(results[0])
+			} else {
+				reject()
+			}
+		})
+
+	})
+	getValidTeam.then((team)=>{
+		const selectPlayers = `SELECT * FROM players
+		WHERE players.team_id = ?`
+
+		connection.query(selectPlayers, [tid], (error, results)=>{
+			if(error){throw error;}
+			// console.log(team, results);
+			res.json({
+				team,
+				players: results,
+				msg: "working"
+			})
+		})
+	})
+
+	getValidTeam.catch(()=>{
+		console.log("Not a Valid Team")
+	})
+
+	//`SELECT * FROM team, players
+	//WHERE team.id=players.team_id AND
+	//team.id = ?`;
+})
 module.exports = router;

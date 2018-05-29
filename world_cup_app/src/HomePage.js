@@ -52,16 +52,16 @@ class HomePage extends Component {
 						</thead>
 						<tbody>
 							<tr>
-								<td>{this.imageStyle(data[0].flag, data[0].name)}</td>
+								<td><Link to={`/team/${data[0].id}`} className="team-link">{this.imageStyle(data[0].flag, data[0].name)}</Link></td>
 							</tr>
 							<tr>
-								<td>{this.imageStyle(data[1].flag, data[1].name)}</td>
+								<td><Link to={`/team/${data[1].id}`} className="team-link">{this.imageStyle(data[1].flag, data[1].name)}</Link></td>
 							</tr>
 							<tr>
-								<td>{this.imageStyle(data[2].flag, data[2].name)}</td>
+								<td><Link to={`/team/${data[2].id}`} className="team-link">{this.imageStyle(data[2].flag, data[2].name)}</Link></td>
 							</tr>
 							<tr>
-								<td>{this.imageStyle(data[3].flag, data[3].name)}</td>
+								<td><Link to={`/team/${data[3].id}`} className="team-link">{this.imageStyle(data[3].flag, data[3].name)}</Link></td>
 							</tr>
 						</tbody>
 					</Table>
