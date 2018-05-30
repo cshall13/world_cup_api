@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Col, Image, OverlayTrigger, Popover, Table } from 'react-bootstrap';
+import { Image, OverlayTrigger, Popover, Table } from 'react-bootstrap';
 import { bootstrapUtils } from 'react-bootstrap/lib/utils';
 import axios from 'axios';
 

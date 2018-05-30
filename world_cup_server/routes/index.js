@@ -74,6 +74,27 @@ router.post('/register', (req, res)=>{
 	});
 });
 
+router.post('/search', (req, res)=>{
+	const t_name = req.body.searchTerm;
+	console.log(t_name);
+	const selectQuery = `SELECT id, name, flag 
+						FROM team 
+						WHERE name 
+						LIKE \'%${t_name}%\' 
+						AND id < 33
+						ORDER BY name`;
+	connection.query(selectQuery, (error, results)=>{
+		if(error) {
+			throw error;
+		}
+		console.log(results);
+		res.json({
+			results,
+			msg: "requestSuccess"
+		})
+	})
+})
+
 router.post('/login', (req, res)=>{
 	const email = req.body.email;
 	const password = req.body.password;

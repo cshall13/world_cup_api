@@ -5,12 +5,13 @@ import { bootstrapUtils } from 'react-bootstrap/lib/utils';
 import Logout from './logout'
 
 class BootstrapNavBar extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			collapsed: false
 		}
 		this.collapse = this.collapse.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	collapse() {
@@ -56,6 +57,13 @@ class BootstrapNavBar extends Component {
 		);
 	}
 
+	handleSubmit(event) {
+		event.preventDefault();
+		const searchTerm = event.target[0].value;
+		console.log(searchTerm);
+		this.props.history.push(`/search/${searchTerm}`);
+	}
+
 	render() {
 		const customButtonStyle = this.buttonStyle();
 		const customFormStyle = this.formStyle();
@@ -73,6 +81,9 @@ class BootstrapNavBar extends Component {
 					</NavItem>
 					<NavItem href="/schedule">
 						Schedule
+					</NavItem>
+					<NavItem href="/calendar">
+						Calendar
 					</NavItem>
 				</Nav>
 				
@@ -92,7 +103,7 @@ class BootstrapNavBar extends Component {
 				</NavItem>
 					</Nav>
 				<Collapse in={this.state.collapsed}>
-					<Form>
+					<Form  onSubmit={this.handleSubmit}>
 					    <FormGroup>
 						    {customFormStyle}
 					    </FormGroup>{' '}
@@ -111,7 +122,7 @@ class BootstrapNavBar extends Component {
 				</NavItem>
 				</Nav>
 				<Collapse in={this.state.collapsed}>
-					<Form>
+					<Form  onSubmit={this.handleSubmit}>
 					    <FormGroup>
 						    {customFormStyle}
 					    </FormGroup>{' '}

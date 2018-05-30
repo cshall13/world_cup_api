@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Glyphicon, Grid, Image, Panel, PanelGroup, Row } from 'react-bootstrap';
+import { Col, Glyphicon, Grid, Image, Panel, PanelGroup, Row } from 'react-bootstrap';
 import { bootstrapUtils } from 'react-bootstrap/lib/utils';
 import axios from 'axios';
 
@@ -85,7 +85,6 @@ class Schedule extends Component {
 						</Col>
 						<Col xs={6} md={3}>
 							<h3 className="s-info">{this.imageStyle(data.home_logo)}   {data.home}</h3>
-							<h3 className="s-info">{this.imageStyle(data.home_logo)}   {data.home} </h3>
 						</Col>
 						<Col xs={6} md={1}>
 							<h3 className="s-info">{data.localTime}</h3>

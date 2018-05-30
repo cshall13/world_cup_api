@@ -51,7 +51,7 @@ class Team extends Component{
 
 	render(){
 		const playerGK = this.state.players.map((data,index)=>{
-			if(data.position == "GK"){
+			if(data.position === "GK"){
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
@@ -63,7 +63,7 @@ class Team extends Component{
 		})
 
 		const playerDF = this.state.players.map((data,index)=>{
-			if(data.position == "DF"){
+			if(data.position === "DF"){
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
@@ -75,7 +75,7 @@ class Team extends Component{
 		})
 
 		const playerMF = this.state.players.map((data,index)=>{
-			if(data.position == "MF"){
+			if(data.position === "MF"){
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
@@ -87,7 +87,7 @@ class Team extends Component{
 		})
 
 		const playerFW = this.state.players.map((data,index)=>{
-			if(data.position == "FW"){
+			if(data.position === "FW"){
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
