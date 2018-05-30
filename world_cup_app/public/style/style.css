@@ -100,7 +100,7 @@
 	width: 300px;
 	height: 300px;
 }
-<<<<<<< HEAD
+
 .anyName{
 	border-radius: 0px;
 	margin-bottom: 0 !important;
@@ -125,7 +125,6 @@
 .teamName{
 	font-family: 'Acme', sans-serif;
 }
-=======
 
 .calendar-container {
 	font-family: cursive;
@@ -204,22 +203,3 @@ input.button1:hover {
 input:focus {
   border: 1px solid #09C;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> Register and Login form update
->>>>>>> 954016d56e28500a1ba20145d85f9f9d6615a1b8
