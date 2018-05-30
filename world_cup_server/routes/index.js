@@ -54,6 +54,24 @@ router.get('/schedule', (req, res)=> {
 	})
 });
 
+router.get('/calendar', (req, res)=> {
+	const selectQuery = `SELECT schedule.type, schedule.month, schedule.date, schedule.localTime, team1.name AS home, team1.logo AS home_logo, team2.name AS away, team2.logo AS away_logo, stadium.city, stadium.name, stadium.image
+							FROM schedule, team AS team1, team AS team2, stadium
+							WHERE schedule.home_id = team1.id
+							AND schedule.away_id = team2.id
+							AND schedule.stadium_id = stadium.id
+							ORDER BY month, date, localTime`;
+	connection.query(selectQuery, (error, result)=>{
+		if(error) {
+			throw error;
+		}
+		res.json({
+			data: result,
+			msg: "requestSuccess"
+		})
+	})
+});
+
 router.post('/register', (req, res)=>{
 	const password = req.body.password;
 	const hashedPassword = bcrypt.hashSync(password);
@@ -143,8 +161,10 @@ router.post('/login', (req, res)=>{
 router.post('/team', (req, res)=>{
 	// console.log(req.body.tid);
 	const tid = req.body.tid;
-	const teamQuery= `SELECT * FROM team 
-		WHERE team.id = ?`
+	const teamQuery= `SELECT team.id, team.name, team.continent, team.rank, team.flag, manager.l_name, manager.f_name 
+						FROM team, manager 
+						WHERE team.id = ?
+						AND team.id=manager.team_id`
 
 	getValidTeam = new Promise((accept, reject)=>{
 
@@ -167,7 +187,7 @@ router.post('/team', (req, res)=>{
 
 		connection.query(selectPlayers, [tid], (error, results)=>{
 			if(error){throw error;}
-			// console.log(team, results);
+			console.log(team, results);
 			res.json({
 				team,
 				players: results,

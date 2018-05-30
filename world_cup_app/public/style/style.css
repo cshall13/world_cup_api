@@ -99,3 +99,19 @@
 	width: 300px;
 	height: 300px;
 }
+
+.calendar-container {
+	font-family: cursive;
+	height: 800px;
+}
+
+.rbc-selected{
+	position: relative;
+}
+
+.game-start{
+	position: absolute;
+	top: -40px;
+	background: black;
+	color: white;
+}

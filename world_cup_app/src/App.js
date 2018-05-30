@@ -9,7 +9,7 @@ import GroupPage from './GroupPage';
 import Schedule from './Schedule';
 import Team from './team';
 import TeamSearch from './TeamSearch';
-import WorldCupCalendar from './WorldCupCalendar'
+import Calendar from './Calendar';
 
 class App extends Component {
   render() {
@@ -22,9 +22,9 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <Route path="/groups" component={GroupPage} />
           <Route path="/schedule" component={Schedule} />
-          <Route path="/calendar" component={WorldCupCalendar} />
           <Route path="/search/:searchTerm" component={TeamSearch} />
           <Route path="/team/:teamId" component={Team} />
+          <Route path="/calendar" component={Calendar} />
         </div>
       </Router>
     );
