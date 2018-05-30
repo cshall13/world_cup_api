@@ -132,7 +132,7 @@
 	border-radius: 0px;
 }
 
-form {
+.form1 {
   background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
   background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
   background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
@@ -157,7 +157,7 @@ form {
 }
 
 
-button {
+.button1 {
   width: 100px;
   position: absolute;
   right: 20px;
@@ -170,7 +170,7 @@ button {
   border: 1px solid #999;
 }
 
-input.button:hover {
+input.button1:hover {
   background: #fff;
   color: #09C;
 }

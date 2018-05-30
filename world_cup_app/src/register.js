@@ -41,7 +41,7 @@ class Register extends Component{
     return(
     <div className="container">
     <h1>Register</h1>
-      <form onSubmit={this.handleRegister}>
+      <form onSubmit={this.handleRegister} className="form1">
         <div className="form-group">
           <label htmlFor="email">Email address:</label>
           <input type="email" className="form-control" id="email" placeholder="example@gmail.com"/>
