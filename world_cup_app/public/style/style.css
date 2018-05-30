@@ -84,6 +84,7 @@
 
 .team-flag{
 	max-width: -webkit-fill-available;
+	max-width: -moz-available;
 }
 
 .position{
@@ -114,4 +115,15 @@
 	top: -40px;
 	background: black;
 	color: white;
+}
+.fav_teams{
+	list-style-type: none;
+}
+
+.favs-image{
+	width:inherit;
+}
+.modal-title{
+	color:black;
+
 }

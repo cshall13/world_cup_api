@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Glyphicon, Popover, OverlayTrigger} from 'react-bootstrap';
+import Favorites from './favorites'
 class Team extends Component{
 	constructor(){
 		super();
@@ -12,7 +13,7 @@ class Team extends Component{
 		}
     	this.handleShow = this.handleShow.bind(this);
     	this.handleClose = this.handleClose.bind(this);
-	// this.addFav = this.addFav.bind(this);
+		this.addFav = this.addFav.bind(this);
 	}
 
 	handleClose() {
@@ -34,7 +35,7 @@ class Team extends Component{
 				tid
 			}
 		}).then(receivedData=>{
-			console.log(receivedData);
+			// console.log(receivedData);
 			this.setState({
 				team: receivedData.data.team,
 				players: receivedData.data.players
@@ -43,10 +44,37 @@ class Team extends Component{
 	}
 
 	hoverData(data){
+		// console.log(this.state.team)
 		return (<Popover id="popover-trigger-hover-focus" title={`${data.f_name} ${data.l_name}`}>
 					Club: {data.club}
 			</Popover>)
 	}
+
+
+	addFav(){
+    	const teamId = this.state.team.id;
+    	const addFavorite = axios({
+    		method: 'POST',
+    		url: `http://localhost:4000/addFav`,
+    		data:{
+    			teamId,
+    			token: localStorage.getItem('token')
+    		}
+    	})
+    	addFavorite.then((favoriteResponse)=>{
+    		// console.log(favoriteResponse.data)
+    		// if Express tells me: {msg:"favAdded"}...
+    		if(favoriteResponse.data.msg === "favAdded"){
+    			this.setState({
+    				buttonClass: "btn btn-success"
+    			})
+    		}else if(favoriteResponse.data.msg === "badToken"){
+    			// tell the user to login
+    			// or send them to /login
+    			this.props.history.push('/login')
+    		}
+    	})
+    }
 
 
 	render(){
@@ -55,7 +83,7 @@ class Team extends Component{
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
-							<Glyphicon glyph="user" /> {data.l_name}, {data.f_name}
+							<i className="fas fa-tshirt"></i> {data.l_name}, {data.f_name}
 						</span>
 					</OverlayTrigger>
 				)
@@ -67,7 +95,7 @@ class Team extends Component{
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
-							<Glyphicon glyph="user" /> {data.l_name}, {data.f_name}
+							<i className="fas fa-tshirt"></i> {data.l_name}, {data.f_name}
 						</span>
 					</OverlayTrigger>
 				)
@@ -79,7 +107,7 @@ class Team extends Component{
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
-							<Glyphicon glyph="user" /> {data.l_name}, {data.f_name}
+							<i className="fas fa-tshirt"></i> {data.l_name}, {data.f_name}
 						</span>
 					</OverlayTrigger>
 				)
@@ -91,7 +119,7 @@ class Team extends Component{
 				return (
 					<OverlayTrigger trigger='hover' placement='bottom' overlay={this.hoverData(data)}>
 						<span className="player-names">
-							<Glyphicon glyph="user" /> {data.l_name}, {data.f_name}
+							<i className="fas fa-tshirt"></i> {data.l_name}, {data.f_name}
 						</span>
 					</OverlayTrigger>
 				)
@@ -107,11 +135,12 @@ class Team extends Component{
 		return(
 			<div className="container">
 				<div className="col-md-4">
-					<h2>{teamTable.name}</h2>
 					<img className="team-flag" src={teamTable.flag} />
 					<h3> Manager: {teamTable.l_name} {teamTable.f_name}</h3>
+					<h2>{teamTable.name}</h2>
 					<h3> Rank: {teamTable.rank} </h3>
 					<h3> Continent: {teamTable.continent} </h3>
+					<button className={this.state.buttonClass} onClick={this.addFav}>Add to Favorites</button>
 				</div>
 				<div className="col-md-8">
 					<div className="custom-bg">

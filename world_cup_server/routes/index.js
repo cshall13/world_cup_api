@@ -20,7 +20,7 @@ router.get('/home', (req, res)=>{
 	  	if(error) {
 	  		throw error;
 	  	}
-	  	console.log(result);
+	  	// console.log(result);
 	  	let group_A = [result[0], result[1], result[2], result[3]];
 	  	let group_B = [result[4], result[5], result[6], result[7]];
 	  	let group_C = [result[8], result[9], result[10], result[11]];
@@ -76,7 +76,7 @@ router.post('/register', (req, res)=>{
 	const password = req.body.password;
 	const hashedPassword = bcrypt.hashSync(password);
 	const email = req.body.email;
-	console.log(email, password);
+	// console.log(email, password);
 
 	const insertUserQuery = `INSERT into user
 		(email, password, token)
@@ -203,5 +203,75 @@ router.post('/team', (req, res)=>{
 	//`SELECT * FROM team, players
 	//WHERE team.id=players.team_id AND
 	//team.id = ?`;
+})
+
+router.post('/addFav', (req, res)=>{
+	const teamToAdd = req.body.teamId;
+	const userToken = req.body.token;
+
+	const getUser = `SELECT id FROM user WHERE token = ?`
+	connection.query(getUser,[userToken],(error, results)=>{
+		if(error){throw error;}
+		if(results.length > 0){
+			// these are the droids we're looking for
+			// this is a valid token!! Hooray!
+			const insertQuery = `INSERT INTO fav_teams
+			(user_id, team_id)
+				VALUES
+			(?,?)`;
+			connection.query(insertQuery,[results[0].id,teamToAdd],(error2, results2)=>{
+				res.json({
+					msg:"favAdded"
+				})
+			})
+		}else{
+			// You dont want to sell me death sticks
+			// you want to go home and rethink your life
+			// In other words. Your token is bogus. Goodbye
+			res.json({
+				msg: "badToken"
+			})
+		}
+	})
+})
+
+router.post('/favorites',(req, res)=>{
+	const token = req.body.token;
+	const userQuery = `SELECT id FROM user
+	WHERE token =?`
+	getValidUser = new Promise((accept, reject)=>{
+		connection.query(userQuery, [token], (error, results)=>{
+			if(error){throw error;}
+			// console.log(results)
+
+			const validUser =(results[0].id >= 1 )
+			// console.log(validUser)
+
+			if(validUser){
+				accept(results[0])
+			}else{
+				reject();
+			}	
+		})
+	}) 
+
+	getValidUser.then((user)=>{
+		const selectFavsQuery =`SELECT DISTINCT * FROM team, fav_teams
+		WHERE fav_teams.user_id = ? AND
+		fav_teams.team_id = team.id`
+		
+		connection.query(selectFavsQuery, [user.id], (error, results)=>{
+			if(error){throw error;}
+			res.json({
+				teams: results,
+				msg: "modal"
+			})
+
+		})
+	})
+
+	getValidUser.catch(()=>{
+		console.log("Not a Valid User")
+	})
 })
 module.exports = router;
