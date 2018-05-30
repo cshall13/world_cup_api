@@ -106,7 +106,7 @@ class Team extends Component{
 
 		return(
 			<div className="container">
-				<div className="col-md-4">
+				<div className='teamName col-md-4'>
 					<h2>{teamTable.name}</h2>
 					<img className="team-flag" src={teamTable.flag} />
 					<h3> Rank: {teamTable.rank} </h3>

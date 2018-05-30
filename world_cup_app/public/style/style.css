@@ -49,7 +49,7 @@
 .custom-bg{
     height: -webkit-fill-available;
     background-repeat: round;
-    background-image: url(https://st2.depositphotos.com/7442846/11231/v/950/depositphotos_112313008-stockillustratie-voetbalveld-met-lijnen-vector-illustratie.jpg);
+    background-image: url(http://climaxstudios.net/photos/climaxstudios/76/376253.jpg);
     /* background-size: contain; */
     /*max-height: max-content;*/
 }
@@ -98,4 +98,28 @@
 .search-image{
 	width: 300px;
 	height: 300px;
+}
+.anyName{
+	border-radius: 0px;
+	margin-bottom: 0 !important;
+}
+
+.topBanner{
+	font-family: 'Righteous', cursive;
+	color: blue;
+	font-size: 64px;
+	text-shadow: 2px 3px #000000;
+}
+
+.groupHeader{
+	background-color: black;
+	color: white;
+}
+
+.team-link{
+	font-size: 20px;
+}
+
+.teamName{
+	font-family: 'Acme', sans-serif;
 }

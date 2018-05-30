@@ -29,7 +29,7 @@ class HomePage extends Component {
 			<div>
 			    <style type="text/css" >{`
 				    .custom-rounded {
-				        width: 5%;
+				        width: 10%;
 				        height: 5%;
 				    }
 			    `}</style>
@@ -39,13 +39,21 @@ class HomePage extends Component {
 	}
 
 	render() {
+		const url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5lbg0vG686tBrYk7FoRyXkWqOyZhOoSFLQ9BzOW5qTiFDkJM1';
+		const background = {
+			backgroundImage : 'url('+ url +')',
+			backgroundRepeat: 'no-repeat',
+			// backgroundPosition: 'center',
+			backgroundSize: 'cover'
+		}
 		const groupTable = this.state.group.map((data, index)=>{
 			const character = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+		
 			// console.log(index);
 			return(
 				<Col sm={6} md={3}>
-					<Table striped bordered condensed hover>
-						<thead>
+					<Table  bordered  hover>
+						<thead className='groupHeader'>
 							<tr>
 								<th className='text-center'>Group {character[index]}</th>
 							</tr>
@@ -70,8 +78,16 @@ class HomePage extends Component {
 		})
 
 		return (
-			<div>
-				{groupTable}
+			<div className='homeDiv col-lg-12' style={background}>
+				<div className='topBanner col-lg-12'>
+					<span> 2018 FIFA WORLD CUP RUSSIA</span>
+				</div>
+				<div className='groupDiv col-md-12'>
+					{groupTable}
+				</div>
+				<div className='bottomBanner'>
+					<img src=''/>
+				</div>
 			</div>
 		)
 	}
