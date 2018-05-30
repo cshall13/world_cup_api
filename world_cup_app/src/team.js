@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Glyphicon, Popover, OverlayTrigger} from 'react-bootstrap';
+import Favorites from './favorites'
 class Team extends Component{
 	constructor(){
 		super();
@@ -61,7 +62,7 @@ class Team extends Component{
     		}
     	})
     	addFavorite.then((favoriteResponse)=>{
-    		console.log(favoriteResponse.data)
+    		// console.log(favoriteResponse.data)
     		// if Express tells me: {msg:"favAdded"}...
     		if(favoriteResponse.data.msg === "favAdded"){
     			this.setState({
@@ -134,9 +135,9 @@ class Team extends Component{
 		return(
 			<div className="container">
 				<div className="col-md-4">
-					<h2>{teamTable.name}</h2>
 					<img className="team-flag" src={teamTable.flag} />
 					<h3> Manager: {teamTable.l_name} {teamTable.f_name}</h3>
+					<h2>{teamTable.name}</h2>
 					<h3> Rank: {teamTable.rank} </h3>
 					<h3> Continent: {teamTable.continent} </h3>
 					<button className={this.state.buttonClass} onClick={this.addFav}>Add to Favorites</button>
