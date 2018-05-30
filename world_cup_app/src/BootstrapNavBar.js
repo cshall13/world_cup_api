@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Collapse, Form, FormControl, FormGroup, Glyphicon, InputGroup, Nav, Navbar, NavItem } from 'react-bootstrap';
 import { bootstrapUtils } from 'react-bootstrap/lib/utils';
-import Logout from './logout'
+import Logout from './logout';
+import Favorites from './favorites';
 
 class BootstrapNavBar extends Component {
 	constructor(props) {
@@ -69,7 +70,11 @@ class BootstrapNavBar extends Component {
 		const customFormStyle = this.formStyle();
 		const loggedIn= localStorage.token;
 		return (
+<<<<<<< HEAD
 			<Navbar inverse collapseOnSelect className='anyName'>
+=======
+			<Navbar inverse collapseOnSelect className="anyName">
+>>>>>>> 954016d56e28500a1ba20145d85f9f9d6615a1b8
 				<Navbar.Header>
 					<Navbar.Brand>
 						<Link to="/">Home</Link>
@@ -113,13 +118,13 @@ class BootstrapNavBar extends Component {
 				:
 				<div>
 				<Nav pullRight>
-					<NavItem href="#">
-						<Glyphicon glyph="thumbs-up" /> Favorites
+					<NavItem>
+						<Favorites />
 					</NavItem>
 					<Logout />
 					<NavItem>
-					{customButtonStyle}
-				</NavItem>
+						{customButtonStyle}
+					</NavItem>
 				</Nav>
 				<Collapse in={this.state.collapsed}>
 					<Form  onSubmit={this.handleSubmit}>

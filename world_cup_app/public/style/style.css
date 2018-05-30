@@ -84,6 +84,7 @@
 
 .team-flag{
 	max-width: -webkit-fill-available;
+	max-width: -moz-available;
 }
 
 .position{
@@ -99,6 +100,7 @@
 	width: 300px;
 	height: 300px;
 }
+<<<<<<< HEAD
 .anyName{
 	border-radius: 0px;
 	margin-bottom: 0 !important;
@@ -123,3 +125,101 @@
 .teamName{
 	font-family: 'Acme', sans-serif;
 }
+=======
+
+.calendar-container {
+	font-family: cursive;
+	height: 800px;
+}
+
+.rbc-selected{
+	position: relative;
+}
+
+.game-start{
+	position: absolute;
+	top: -40px;
+	background: black;
+	color: white;
+}
+.fav_teams{
+	list-style-type: none;
+}
+
+.favs-image{
+	width:inherit;
+}
+.modal-title{
+	color:black;
+
+}
+
+.anyName{
+	border-radius: 0px;
+}
+
+.form1 {
+  background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  margin: auto;
+  position: relative;
+  width: 450px;
+  height: 350px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 24px;
+  font-weight: bold;
+  color: #5c8693;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.button1 {
+  width: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #09C;
+  color: #fff;
+  font-family: Verdana, Geneva, sans-serif;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #999;
+}
+
+input.button1:hover {
+  background: #fff;
+  color: #09C;
+}
+
+input:focus {
+  border: 1px solid #09C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Register and Login form update
+>>>>>>> 954016d56e28500a1ba20145d85f9f9d6615a1b8
