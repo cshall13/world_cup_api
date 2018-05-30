@@ -45,8 +45,8 @@ class Login extends Component{
     return(
     <div className="container">
       <h1> Login </h1>
-  		<form onSubmit={this.handleLogin}>
-  		  <div className="form-group">
+  		<form onSubmit={this.handleLogin} >
+  		  <div className="form-group ">
   		    <label htmlFor="email">Email address:</label>
   		    <input type="email" className="form-control" id="email" placeholder="example@gmail.com"/>
   		  </div>
