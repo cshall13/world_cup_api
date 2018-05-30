@@ -44,11 +44,11 @@ class Register extends Component{
       <form onSubmit={this.handleRegister}>
         <div className="form-group">
           <label htmlFor="email">Email address:</label>
-          <input type="email" className="form-control" id="email" />
+          <input type="email" className="form-control" id="email" placeholder="example@gmail.com"/>
         </div>
         <div className="form-group">
           <label htmlFor="pwd">Password:</label>
-          <input type="password" className="form-control" id="pwd" />
+          <input type="password" className="form-control" id="pwd" placeholder="Password" />
         </div>
         <div className="checkbox">
           <label><input type="checkbox" /> Remember me</label>
