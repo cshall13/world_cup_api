@@ -42,7 +42,7 @@ router.get('/schedule', (req, res)=> {
 							WHERE schedule.home_id = team1.id
 							AND schedule.away_id = team2.id
 							AND schedule.stadium_id = stadium.id
-							ORDER BY month, date, localTime`;
+							ORDER BY schedule.month, schedule.date, schedule.localTime`;
 	connection.query(selectQuery, (error, result)=>{
 		if(error) {
 			throw error;
@@ -60,7 +60,7 @@ router.get('/calendar', (req, res)=> {
 							WHERE schedule.home_id = team1.id
 							AND schedule.away_id = team2.id
 							AND schedule.stadium_id = stadium.id
-							ORDER BY month, date, localTime`;
+							ORDER BY schedule.month, schedule.date, schedule.localTime`;
 	connection.query(selectQuery, (error, result)=>{
 		if(error) {
 			throw error;
@@ -94,7 +94,7 @@ router.post('/register', (req, res)=>{
 
 router.post('/search', (req, res)=>{
 	const t_name = req.body.searchTerm;
-	console.log(t_name);
+	// console.log(t_name);
 	const selectQuery = `SELECT id, name, flag 
 						FROM team 
 						WHERE name 
@@ -105,7 +105,7 @@ router.post('/search', (req, res)=>{
 		if(error) {
 			throw error;
 		}
-		console.log(results);
+		// console.log(results);
 		res.json({
 			results,
 			msg: "requestSuccess"
@@ -187,7 +187,7 @@ router.post('/team', (req, res)=>{
 
 		connection.query(selectPlayers, [tid], (error, results)=>{
 			if(error){throw error;}
-			console.log(team, results);
+			// console.log(team, results);
 			res.json({
 				team,
 				players: results,

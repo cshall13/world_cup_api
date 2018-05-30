@@ -136,8 +136,8 @@ class Team extends Component{
 			<div className="container">
 				<div className="col-md-4">
 					<img className="team-flag" src={teamTable.flag} />
-					<h3> Manager: {teamTable.l_name} {teamTable.f_name}</h3>
 					<h2>{teamTable.name}</h2>
+					<h3> Manager: {teamTable.l_name} {teamTable.f_name}</h3>
 					<h3> Rank: {teamTable.rank} </h3>
 					<h3> Continent: {teamTable.continent} </h3>
 					<button className={this.state.buttonClass} onClick={this.addFav}>Add to Favorites</button>
