@@ -70,7 +70,7 @@ class BootstrapNavBar extends Component {
 		const customFormStyle = this.formStyle();
 		const loggedIn= localStorage.token;
 		return (
-			<Navbar inverse collapseOnSelect className="anyName">
+			<Navbar inverse collapseOnSelect>
 				<Navbar.Header>
 					<Navbar.Brand>
 						<Link to="/">Home</Link>
