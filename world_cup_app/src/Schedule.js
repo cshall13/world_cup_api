@@ -43,11 +43,6 @@ class Schedule extends Component {
 		);
 	}
 
-	month(month) {
-		if(month === 6) return 'June';
-		else if(month === 7) return 'July';
-	}
-
 	stage(type) {
 		if(type === 'GR') return 'Group Stage';
 		else if(type === 'R16') return 'Round of 16';
@@ -76,7 +71,7 @@ class Schedule extends Component {
 			<div>
 				{ data.home !== 'null' && data.away !== 'null' &&
 					<Row>
-						<Col xs={6} md={2} className="custom-column">
+						<Col xs={6} md={2}>
 							<ul className='info-list text-left'>
 								<li>{this.stage(data.type)}</li>
 								<li>{data.name}</li>
@@ -95,7 +90,7 @@ class Schedule extends Component {
 					</Row>
 				} { data.home === 'null' && data.away === 'null' &&
 					<Row>
-						<Col xs={6} md={2} className="custom-column">
+						<Col xs={6} md={2}>
 							<ul className='info-list text-left'>
 								<li>{this.stage(data.type)}</li>
 								<li>{data.name}</li>
@@ -119,12 +114,12 @@ class Schedule extends Component {
 				<div>
 					{ index === 0 &&
 						<div>
-							<h3 className='w_header text-left'>{this.month(data.month)} {data.date}</h3>
+							<h3 className='w_header text-left'>{data.month} {data.date}</h3>
 							<hr className="line-split"/>
 						</div>
 					} { index > 0 && this.state.data[index].date !== this.state.data[index - 1].date &&
 						<div>
-							<h3 className='w_header text-left'>{this.month(data.month)} {data.date}</h3>
+							<h3 className='w_header text-left'>{data.month} {data.date}</h3>
 							<hr className="line-split"/>
 						</div>
 					}
