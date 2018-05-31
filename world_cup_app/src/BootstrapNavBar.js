@@ -75,62 +75,65 @@ class BootstrapNavBar extends Component {
 					<Navbar.Brand>
 						<Link to="/">Home</Link>
 					</Navbar.Brand>
+					<Navbar.Toggle />
 				</Navbar.Header>
-				<Nav>
-					<NavItem href="/groups">
-						Groups
-					</NavItem>
-					<NavItem href="/schedule">
-						Schedule
-					</NavItem>
-					<NavItem href="/calendar">
-						Calendar
-					</NavItem>
-				</Nav>
-				
-
-				{loggedIn === undefined
-				?
-				<div>
-				<Nav pullRight>
-					<NavItem href="/register">
-						<Glyphicon glyph="user" /> Register
-					</NavItem>
-					<NavItem href="/login">
-						<Glyphicon glyph="log-in" /> Login
-					</NavItem>
-					<NavItem>
-					{customButtonStyle}
-				</NavItem>
+				<Navbar.Collapse>
+					<Nav>
+						<NavItem href="/groups">
+							Groups
+						</NavItem>
+						<NavItem href="/schedule">
+							Schedule
+						</NavItem>
+						<NavItem href="/calendar">
+							Calendar
+						</NavItem>
 					</Nav>
-				<Collapse in={this.state.collapsed}>
-					<Form  onSubmit={this.handleSubmit}>
-					    <FormGroup>
-						    {customFormStyle}
-					    </FormGroup>{' '}
-					</Form>
-				</Collapse>
-				</div>	
-				:
-				<div>
-				<Nav pullRight>
-					<NavItem>
-						<Favorites />
-					</NavItem>
-					<Logout />
-					<NavItem>
-						{customButtonStyle}
-					</NavItem>
-				</Nav>
-				<Collapse in={this.state.collapsed}>
-					<Form  onSubmit={this.handleSubmit}>
-					    <FormGroup>
-						    {customFormStyle}
-					    </FormGroup>{' '}
-					</Form>
-				</Collapse>	
-				</div>
-				}			
+					
+
+					{loggedIn === undefined
+					?
+					<div>
+					<Nav pullRight>
+						<NavItem href="/register">
+							<Glyphicon glyph="user" /> Register
+						</NavItem>
+						<NavItem href="/login">
+							<Glyphicon glyph="log-in" /> Login
+						</NavItem>
+						<NavItem>
+							{customButtonStyle}
+						</NavItem>
+					</Nav>
+					<Collapse in={this.state.collapsed}>
+						<Form  onSubmit={this.handleSubmit}>
+						    <FormGroup>
+							    {customFormStyle}
+						    </FormGroup>{' '}
+						</Form>
+					</Collapse>
+					</div>	
+					:
+					<div>
+					<Nav pullRight>
+						<NavItem>
+							<Favorites />
+						</NavItem>
+						<Logout />
+						<NavItem>
+							{customButtonStyle}
+						</NavItem>
+					</Nav>
+					<Collapse in={this.state.collapsed}>
+						<Form  onSubmit={this.handleSubmit}>
+						    <FormGroup>
+							    {customFormStyle}
+						    </FormGroup>{' '}
+						</Form>
+					</Collapse>	
+					</div>
+					}	
+				</Navbar.Collapse>		
 			</Navbar>
 		)
 	}

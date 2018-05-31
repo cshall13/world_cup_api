@@ -48,10 +48,17 @@
 
 .custom-bg{
     height: -webkit-fill-available;
+    height: -moz-available;
     background-repeat: round;
     background-image: url(http://climaxstudios.net/photos/climaxstudios/76/376253.jpg);
     /* background-size: contain; */
     /*max-height: max-content;*/
+}
+
+@-moz-document url-prefix() {
+  .custom-bg {
+    height: 586px;
+  }
 }
 
 #col-gk{
@@ -202,4 +209,20 @@ input.button1:hover {
 
 input:focus {
   border: 1px solid #09C;
+}
+
+.btn-hamburger {
+	display: none;
+}
+
+@media screen and (max-width: 760px) {
+	.col-menu{
+		flex-direction: column;
+		display: none !important;
+	}
+
+	.btn-hamburger {
+		display: block;
+		position: absolute;
+	}
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import swal from 'sweetalert2';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -52,21 +53,7 @@ class Calendar extends Component {
 				      	this.setState({date: date})
 				    }}
 				    onSelectEvent={(e,se)=>{
-				    	return mp;
-				  //   	const oldEl = document.getElementsByClassName('game-start');
-				  //   	if(oldEl[0]){
-				  //   		oldEl[0].remove();
-				  //   	}
-				  //   	const gameEl = se.target; 
-				  //   	console.dir(gameEl);
-				  //   	const gameStartTime = e.start;
-				  //   	const parentEl = gameEl.parentNode;
-				  //   	console.dir (parentEl)
-
-				  //   	let gameStartEl = document.createElement("div");
-						// gameStartEl.innerHTML = gameStartTime;
-						// gameStartEl.className = "game-start";
-				  //   	parentEl.insertBefore(gameStartEl,parentEl.childNodes[0])
+						
 				    }}
 			    />
 			</div>
