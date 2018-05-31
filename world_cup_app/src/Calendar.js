@@ -35,13 +35,22 @@ class Calendar extends Component {
 			if(data.home === 'null' || data.home === 'null') title = data.type;
 			else title = data.home + ' vs ' + data.away;
 			return {
+				id: index,
 				title: title,
 				allDay: false,
 				start: new Date(2018, data.month - 1, data.date),
-				end: new Date(2018, data.month - 1, data.date)
+				end: new Date(2018, data.month - 1, data.date),
+				home: data.home,
+				away: data.away,
+				home_logo: data.home_logo,
+				away_logo: data.away_logo,
+				stadium: data.name,
+				city: data.city,
+				image: data.image,
+				time: data.localTime
 			}
 		})
-		console.log(events);
+
 		return (
 			<div className="calendar-container">
 				<BigCalendar
@@ -53,7 +62,36 @@ class Calendar extends Component {
 				      	this.setState({date: date})
 				    }}
 				    onSelectEvent={(e,se)=>{
-						
+				    	function getMonth(month) {
+				    		if(month === 5) return 'June';
+				    		else if(month === 6) return 'July';
+				    	}
+
+				    	function getDay(day) {
+				    		if(day === 0) return 'Sun';
+				    		else if(day === 1) return 'Mon';
+				    		else if(day === 2) return 'Tue';
+				    		else if(day === 3) return 'Wed';
+				    		else if(day === 4) return 'Thu';
+				    		else if(day === 5) return 'Fri';
+				    		else if(day === 6) return 'Sat';
+				    	}
+				    	
+				    	let matchTitle;
+				    	if(e.home_logo == null || e.away_logo == null) 
+				    		matchTitle = `<span class="match-title">${e.title}</span>`;
+				    	else
+				    		matchTitle = (
+				    			`<img src=${e.home_logo} height="60" width="60"/>&ensp;
+								  <span class="match-title">${e.title}</span>&ensp;
+								  <img src=${e.away_logo} height="60" width="60"/>`
+				    		);
+
+						swal({
+							html: `${matchTitle}<br>
+								  <img class="sm-stadium-image" src=${e.image} /><br>
+								  <span class="match-info">${e.city}, ${e.stadium} @${getDay(e.start.getDay())} ${getMonth(e.start.getMonth())} ${e.start.getDate()} ${e.time}</span>`
+						});
 				    }}
 			    />
 			</div>

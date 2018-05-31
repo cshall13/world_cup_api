@@ -58,25 +58,25 @@ class Schedule extends Component {
 	}
 
 
-	matchinfo(data, index) {
-		return (
-			<Panel eventKey={`"${index}"`}>
-				<Panel.Heading className="custom-heading">
-					<Panel.Title className="custom-title" toggle><Glyphicon glyph="chevron-down" className="arrow" /></Panel.Title>
-				</Panel.Heading>
-				<Panel.Body collapsible>
-					<img className="stadium-image" src={data.image} />
-				</Panel.Body>
-			</Panel>
-		)
-	}
+	// matchinfo(data, index) {
+	// 	return (
+	// 		<Panel eventKey={`"${index}"`}>
+	// 			<Panel.Heading className="custom-heading">
+	// 				<Panel.Title className="custom-title" toggle><Glyphicon glyph="chevron-down" className="arrow" /></Panel.Title>
+	// 			</Panel.Heading>
+	// 			<Panel.Body collapsible>
+	// 				<img className="stadium-image" src={data.image} />
+	// 			</Panel.Body>
+	// 		</Panel>
+	// 	)
+	// }
 
 	singleSchedule(data, index) {
 		return (
 			<div>
 				{ data.home !== 'null' && data.away !== 'null' &&
 					<Row>
-						<Col xs={6} md={3} className="custom-column">
+						<Col xs={6} md={2} className="custom-column">
 							<ul className='info-list text-left'>
 								<li>{this.stage(data.type)}</li>
 								<li>{data.name}</li>
@@ -95,7 +95,7 @@ class Schedule extends Component {
 					</Row>
 				} { data.home === 'null' && data.away === 'null' &&
 					<Row>
-						<Col xs={6} md={3}>
+						<Col xs={6} md={2} className="custom-column">
 							<ul className='info-list text-left'>
 								<li>{this.stage(data.type)}</li>
 								<li>{data.name}</li>
@@ -128,19 +128,19 @@ class Schedule extends Component {
 							<hr className="line-split"/>
 						</div>
 					}
-					<Grid>
-						{this.singleSchedule(data, index)}
-					</Grid>
-					{this.matchinfo(data, index)}
+					{/*<Grid>*/}
+					{this.singleSchedule(data, index)}
+					{/*</Grid>*/}
+					{/*this.matchinfo(data, index)*/}
 				</div>
 			);
 		});
 		console.log(this.state.data);
 		return (
-			<div>
-				<PanelGroup accordian activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+			<div className='schedule-container' text-center>
+				{/*<PanelGroup accordian activeKey={this.state.activeKey} onSelect={this.handleSelect}>*/}
 					{scheduleTable}
-				</PanelGroup>
+				{/*</PanelGroup>*/}
 			</div>
 		)
 	}

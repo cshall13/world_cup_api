@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import './App.css';
 import BootstrapNavBar from './BootstrapNavBar';
 import HomePage from './HomePage';
 import Register from './register';
@@ -10,6 +9,7 @@ import Schedule from './Schedule';
 import Team from './team';
 import TeamSearch from './TeamSearch';
 import Calendar from './Calendar';
+
 
 class App extends Component {
   render() {
